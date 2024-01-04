@@ -1,151 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-  <title>Responsive Navbar</title>
-  <style>
-    body {
-      margin: 0;
-      /* font-family: 'Arial', sans-serif; */
-      font-family: 'Poppins', sans-serif;
-      background-image: url("bg2.png");
-      background-attachment: fixed;
-      background-size: cover;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-    .navbar {
-      background-color: black;
-      position: fixed;
-      width: 100%;
-      z-index: 100;
-      top: 0;
-      padding: 17px;
-    }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            height: 80vh;
+            /* padding-top: 20px; */
+            border: 2px solid black;
+        }
 
-    .navbar a {
-      float: left;
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: large;
-    }
+        .box {
+            width: 50%;
+            background-color: #eee;
+            padding: 20px;
+            box-sizing: border-box;
+            /* margin-bottom: 20px; */
+            border: 2px solid red;
+            display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;    
+        }
+        .box1{  
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;    
+        }
+        .login-form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border: 2px solid yellow;
+            }
 
-    /* .navbar a:hover {
-      background-color: #ddd;
-      color: black;
-    } */
+            .login-form input {
+                width: 100%;
+                padding: 8px;
+                margin: 10px 0;
+                box-sizing: border-box;
+            }
 
-    @media screen and (max-width: 600px) {
-      .navbar a {
-        float: none;
-        display: block;
-        text-align: left;
-      }
-    }
+            .login-form button {
+                width: 100%;
+                padding: 10px;
+                background-color: black;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
 
-    .box-container {
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 60px;
-      height: 100vh;
-    }
+            .signup-link {
+                margin-top: 10px;
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                color: black;
+            }
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+            }
 
-    .box {
-      box-sizing: border-box;
-      width: 50%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      /* background-color: #f9f9f9;  */
-      color: white;
-    }
+            .box:last-child {
+                display: none;
+            }
 
-    .box img {
-      max-width: 100%;
-      max-height: 100%;
-      display: block;
-      margin-top: 20px;
-    }
+            .box1   {
+                width: 100%;
+                height: 100vh;
+            }
 
-    .buttons-container {
-      display: flex;
-      /* flex-direction: column; */
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .box-container ul {
-    list-style-type: none; /* Remove default list bullets */
-    padding: 0; /* Remove default padding */
-  }
-
-  .box-container li::before {
-    content: '\2713'; /* Unicode checkmark character */
-    color: white; /* Color of the checkmark */
-    display: inline-block;
-    width: 1em; /* Adjust the width for spacing */
-    margin-left: -1em; /* Negative margin for proper alignment */
-  }
-
-  .button {
-      padding: 20px 73px; /* Adjusted padding to increase the size of the button */
-      background-color: transparent;
-      color: #fff;
-      text-decoration: none;
-      border: 3px solid #fff;
-      cursor: pointer;
-      border-radius: 27px;
-      font-size: large;
-      transition: border-color 0.3s, color 0.3s;
-    }
-
-    .button:hover {
-      border-color: rgb(255, 34, 71); /* Change border color on hover to pink */
-      color: rgb(255, 34, 71); /* Change text color on hover to pink */
-    }
-
-
-
-
-    @media screen and (max-width: 1000px) {
-      .box {
-        width: 100%;
-        background-image: url("bgonmed.png");
-      }
-    }
-  </style>
+          
+        }
+    </style>
 </head>
 <body>
-
-<div class="navbar">
-  <a href="#home">LOGO</a>
-</div>
-
-<div class="box-container">
-  <div class="box">
-    <h1>Discover the future of retail with NextGen Retail software</h1>
-    <h3>See what turns your visitors into customers and what are their behavioral patterns.</h3>
-    <ul>
-      <li>Robust security measures for customer data and transactions.</li>
-      <li>Intuitive and easy-to-use dashboard for real-time insights.</li>
-      <li>Accurate revenue predictions and comprehensive data analytics.</li>
-    </ul>
-    <div class="buttons-container">
-      <button class="button">Login</button>
-      <button class="button">Signup</button>
+    <div class="container">
+        <div class="box">
+            <div class="box1 login-form">
+                <h2>Login</h2>
+                <form action="login_process.php" method="post">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <a class="signup-link" href="#">Not a member yet? Sign up here.</a>
+            </div>
+        </div>
+        <div class="box">
+            <h2>Box 2</h2>
+            <p>This is the second box. It will disappear on small screens (< 800px).</p>
+        </div>
     </div>
-  </div>
-  <div class="box"><img src="box2_image.png" alt="Box 2 Image"></div>
-</div>
-
 </body>
 </html>
